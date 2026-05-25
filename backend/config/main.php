@@ -6,7 +6,7 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
-$cookieDomain = getenv('COOKIE_DOMAIN') ?: null; // e.g. '.zssf.or.tz' (keep null for host-only cookies)
+$cookieDomain = '.zssf.or.tz'; // e.g. '.zssf.or.tz' (keep null for host-only cookies)
 $trustedProxyCidrs = array_values(array_filter(array_map('trim', explode(',', getenv('TRUSTED_PROXY_CIDRS') ?: ''))));
 $trustedHosts = [];
 foreach ($trustedProxyCidrs as $cidr) {

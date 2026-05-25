@@ -791,9 +791,12 @@ class SiteController extends Controller
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($ch);
-            curl_close($ch);
 
             $results = json_decode($response, true);
+            if ($results === null || !isset($results['userData'])) {
+                Yii::$app->session->setFlash('form_fail', Yii::t('yii', 'API response error. Please try again.'));
+                return $this->redirect(['site/signup']);
+            }
             $status = $results['userData']['status'];
             $message = $results['userData']['message'];
             //$OTP=$results['userData']['validation_code'];
