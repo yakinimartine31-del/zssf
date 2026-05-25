@@ -3,9 +3,9 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=zssforg_mobile',
-            'username' => 'root',
-            'password' => '',
+            'dsn' => 'mysql:host=localhost;dbname=zssforg_portal',
+            'username' => 'zssforg_portal',
+            'password' => '=-4gKD1-+@v7dWU1',
             'charset' => 'utf8',
         ],
         'mailer' => [
